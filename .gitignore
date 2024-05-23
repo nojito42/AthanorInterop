@@ -1,0 +1,143 @@
+# Unreal Engine generated files and directories
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+!Content/
+.vscode/
+
+# Compiled source files
+*.dll
+*.exe
+*.so
+*.dylib
+*.app
+
+# Compiled object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.dylib
+*.so
+*.dll
+
+# Static Libraries
+*.lib
+*.a
+*.la
+
+# Executables
+*.exe
+*.out
+*.app
+*.ipa
+
+# Other binaries
+*.pdb
+*.idb
+*.DS_Store
+
+# Object files and libraries
+*.obj
+*.pdb
+*.ilk
+*.lib
+*.exp
+*.app
+*.iobj
+*.ipdb
+
+# Ignore Visual Studio specific files
+.vs/
+.vsconfig
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.VC.db
+*.VC.opendb
+
+# Ignore macOS specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Ignore Visual Studio Code workspace files
+.vscode/
+
+# Ignore Xcode specific files
+xcuserdata/
+*.xcworkspace
+*.xcuserdatad/
+*.xccheckout
+*.xcodeproj
+
+# Ignore Unreal Engine auto-generated files
+*.pidb
+*.log
+*.vspx
+
+# Ignore Unreal Engine specific files
+*.deriveddata_cache
+*.umap
+*.uasset
+
+# Ignore configuration files
+Config/DefaultEditor.ini
+Config/DefaultEditorUserSettings.ini
+Config/DefaultGame.ini
+Config/DefaultEngine.ini
+Config/DefaultInput.ini
+Config/DefaultEditorPerProjectUserSettings.ini
+Config/DefaultEditor.ini
+Config/DefaultEditorKeyBindings.ini
+
+# Ignore build output files
+*.target
+*.modules
+*.version
+
+# Ignore Mac specific files
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+.Trash
+*.swp
+*.dat
+*.idr
+*.local
+*.mode1v3
+*.pbxuser
+*.perspectivev3
+*.pyc
+
+# Ignore macOS specific files
+*.DS_Store
+*.AppleDouble
+.LSOverride
