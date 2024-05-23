@@ -3,6 +3,7 @@ Binaries/
 DerivedDataCache/
 Intermediate/
 Saved/
+!Content/
 .vscode/
 
 # Compiled source files
