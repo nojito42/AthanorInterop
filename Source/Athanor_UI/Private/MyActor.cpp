@@ -6,6 +6,8 @@
 // Sets default values
 AMyActor::AMyActor()
 {
+	bActorLabelEditable = true;
+
 	/*try
 	{
 		Print("Kappa", FColor::Red, 2.0f);
