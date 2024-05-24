@@ -5,10 +5,11 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "Components/TextRenderComponent.h"
+#include "MyActor.h"
 #include "MyHexagon.generated.h"
 
 UCLASS()
-class ATHANOR_UI_API AMyHexagon : public AActor
+class ATHANOR_UI_API AMyHexagon : public AMyActor
 {
 	GENERATED_BODY()
 

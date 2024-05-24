@@ -21,8 +21,6 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-	virtual void PreInitializeComponents() override;
-	virtual void PostInitializeComponents() override;
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -30,15 +28,6 @@ public:
 	virtual void OnConstruction(const FTransform& Transform) override;
 	UFUNCTION(BlueprintCallable, Category = "Custom")
 	void changeBPname(const FString& newName);
-	UFUNCTION(BlueprintCallable, Category = "Debug")
-	static void PrintHelloWorld();
-	
-
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "_Custom")
-	int col = 0;
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "_Custom")
-	int row = 0;
-
 };
 
 
