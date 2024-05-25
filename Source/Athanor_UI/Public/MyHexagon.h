@@ -6,7 +6,9 @@
 #include "GameFramework/Actor.h"
 #include "Components/TextRenderComponent.h"
 #include "MyActor.h"
+#include "HexagonCoordinates.h"
 #include "MyHexagon.generated.h"
+
 
 UCLASS()
 class ATHANOR_UI_API AMyHexagon : public AMyActor
@@ -35,5 +37,15 @@ protected:
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+	UFUNCTION(BlueprintCallable, Category = "Custom")
+	FHexagonCoordinates ComputeCoordinate(int row, int column);
 
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "_Fields")
+	FHexagonCoordinates HexCoords;
+
+	UFUNCTION(BlueprintCallable, Category = "Custom")
+	static FString HexagonCoordinatesToString(const FHexagonCoordinates& Coordinates)
+	{
+		return FString::Printf(TEXT("[%s, %d]"), *Coordinates.Row, Coordinates.Column);
+	}
 };

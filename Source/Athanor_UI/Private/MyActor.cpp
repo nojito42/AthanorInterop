@@ -51,13 +51,7 @@ void AMyActor::ChangeBpName(const FString& newName)
 	bIsEditorOnlyActor = false;
 }
 
-FHexagonCoordinates AMyActor::ComputeCoordinate(int row, int column)
-{
-	FHexagonCoordinates coordinates;
-	coordinates.Row = FString::Printf(TEXT("%c"), 'A' + row);
-	coordinates.Column = column + 1;
-	return coordinates;
-}
+
 
 
 

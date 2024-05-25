@@ -7,17 +7,6 @@
 #include "Engine/Engine.h"
 #include "MyActor.generated.h"
 
-USTRUCT(BlueprintType)
-struct FHexagonCoordinates
-{
-	GENERATED_BODY()
-
-	UPROPERTY(BlueprintReadWrite, Category = "Hexagon")
-	FString Row;
-
-	UPROPERTY(BlueprintReadWrite, Category = "Hexagon")
-	int32 Column;
-};
 
 UCLASS()
 class ATHANOR_UI_API AMyActor : public AActor
@@ -41,13 +30,5 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Custom")
 	void ChangeBpName(const FString& newName);
 
-	UFUNCTION(BlueprintCallable, Category = "Custom")
-	FHexagonCoordinates ComputeCoordinate(int row, int column);
-
-
-	UFUNCTION(BlueprintCallable, Category = "Custom")
-	static FString HexagonCoordinatesToString(const FHexagonCoordinates& Coordinates)
-	{
-		return FString::Printf(TEXT("[%s, %d]"), *Coordinates.Row, Coordinates.Column);
-	}
+	
 };
