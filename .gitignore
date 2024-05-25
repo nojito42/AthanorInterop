@@ -4,7 +4,9 @@ DerivedDataCache/
 Intermediate/
 Saved/
 .vscode/
-
+.editorconfig
+/Config
+/Build
 # Compiled source files
 *.dll
 *.exe

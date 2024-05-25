@@ -16,14 +16,14 @@ struct FHexaPairs
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Player")
 	TArray<AMyHexagon*> Hexagons;
 
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Player")
+	UPROPERTY(BlueprintReadWrite, Category = "Player")
 	TArray<FHexagonCoordinates> Coords;
 };
 UCLASS()
 class ATHANOR_UI_API AMyGrid : public AMyActor
 {
 	GENERATED_BODY()
-	
+
 public:
 	AMyGrid();
 #pragma region Grids
@@ -47,11 +47,6 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Custom")
 	void ClearAllGrids();
-
-	template<typename T, typename... FHexagonCoordinates>
-	void AddCoordinates(FHexaPairs& grid, T first, FHexagonCoordinates... rest);
-
-	void AddCoordinates(FHexaPairs& grid, FHexagonCoordinates last);
 #pragma endregion
 protected:
 private:

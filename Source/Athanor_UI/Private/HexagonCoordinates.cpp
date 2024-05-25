@@ -3,3 +3,13 @@
 
 #include "HexagonCoordinates.h"
 
+FHexagonCoordinates::FHexagonCoordinates()
+{
+
+}
+
+FHexagonCoordinates::FHexagonCoordinates( FString r, int32 c)
+{
+	Row = r;
+	Column = c;
+}
