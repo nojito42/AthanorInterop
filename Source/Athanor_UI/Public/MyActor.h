@@ -7,6 +7,18 @@
 #include "Engine/Engine.h"
 #include "MyActor.generated.h"
 
+USTRUCT(BlueprintType)
+struct FHexagonCoordinates
+{
+	GENERATED_BODY()
+
+	UPROPERTY(BlueprintReadWrite, Category = "Hexagon")
+	FString Row;
+
+	UPROPERTY(BlueprintReadWrite, Category = "Hexagon")
+	int32 Column;
+};
+
 UCLASS()
 class ATHANOR_UI_API AMyActor : public AActor
 {
@@ -27,8 +39,15 @@ public:
 	void Print(FString Text, FColor Color = FColor(0x9480C5), float Duration = 2.0f);
 	virtual void OnConstruction(const FTransform& Transform) override;
 	UFUNCTION(BlueprintCallable, Category = "Custom")
-	void changeBPname(const FString& newName);
+	void ChangeBpName(const FString& newName);
+
+	UFUNCTION(BlueprintCallable, Category = "Custom")
+	FHexagonCoordinates ComputeCoordinate(int row, int column);
+
+
+	UFUNCTION(BlueprintCallable, Category = "Custom")
+	static FString HexagonCoordinatesToString(const FHexagonCoordinates& Coordinates)
+	{
+		return FString::Printf(TEXT("[%s, %d]"), *Coordinates.Row, Coordinates.Column);
+	}
 };
-
-
-

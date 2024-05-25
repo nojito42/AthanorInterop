@@ -39,16 +39,25 @@ void AMyActor::Print(FString Text, FColor Color, float Duration)
 
 void AMyActor::OnConstruction(const FTransform& Transform)
 {
-	bIsEditorOnlyActor = true;
 	Super::OnConstruction(Transform);
 	
 }
 
-void AMyActor::changeBPname(const FString& newName)
+void AMyActor::ChangeBpName(const FString& newName)
 {
 	bIsEditorOnlyActor = true;
 	this->ClearActorLabel();
 	this->SetActorLabel(newName);
 	bIsEditorOnlyActor = false;
 }
+
+FHexagonCoordinates AMyActor::ComputeCoordinate(int row, int column)
+{
+	FHexagonCoordinates coordinates;
+	coordinates.Row = FString::Printf(TEXT("%c"), 'A' + row);
+	coordinates.Column = column + 1;
+	return coordinates;
+}
+
+
 
