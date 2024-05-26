@@ -25,7 +25,8 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-	void Print(FString Text, FColor Color = FColor(0x9480C5), float Duration = 2.0f);
+	UFUNCTION(BlueprintCallable, Category = "Custom")
+	void Print(FString Text, FColor Color = FColor::Cyan, float Duration = 2.0f);
 	virtual void OnConstruction(const FTransform& Transform) override;
 	UFUNCTION(BlueprintCallable, Category = "Custom")
 	void ChangeBpName(const FString& newName);

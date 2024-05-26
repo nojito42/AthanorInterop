@@ -17,4 +17,9 @@ public:
 
 	UPROPERTY(BlueprintReadWrite, Category = "Hexagon")
 	int32 Column;
+
+	bool operator==(const FHexagonCoordinates& Other) const
+	{
+		return Row == Other.Row && Column == Other.Column;
+	}
 };

@@ -51,3 +51,52 @@ void AMyGrid::ClearAllGrids()
 	HexagonGrid.Empty();
 }
 
+void AMyGrid::SetupAthanGrids(bool IsPlayer, int Index, UMaterialInterface* M1, UMaterialInterface* M2)
+{
+	AMyHexagon* Hex = HexagonGrid[Index];
+
+	if (IsPlayer)
+	{
+		SetupMeshForAthanGrid(GridPlayer1, Hex, M1, M2);
+		SetupMeshForAthanGrid(GridPlayer2, Hex, M1, M2);
+		SetupMeshForAthanGrid(GridPlayer3, Hex, M1, M2);
+	}
+
+	else
+	{
+		SetupMeshForAthanGrid(GridEnemy1, Hex, M1, M2);
+		SetupMeshForAthanGrid(GridEnemy2, Hex, M1, M2);
+		SetupMeshForAthanGrid(GridEnemy3, Hex, M1, M2);
+	}
+
+
+
+}
+
+
+
+void AMyGrid::SetupMeshForAthanGrid(FHexaPairs& Pwn, AMyHexagon*& Hex, UMaterialInterface* M1, UMaterialInterface* M2)
+{
+	if (!Pwn.Coords.Contains(Hex->HexCoords)) return;
+
+	Hex->_Mesh_1->SetMaterial(0, M1);
+	Hex->_Mesh_2->SetMaterial(0, M2);
+
+	Pwn.Hexagons.Add(Hex);
+}
+FTransform AMyGrid::ComputeTransform(int rowIndex, int colIndex, float margin) {
+	float hexWidth = ComputeCoord(4.0f, 0.75f, margin);
+	float halfHexHeight = ComputeCoord(3.0f, 0.5f, margin);
+	float rowHeight = ComputeCoord(3.0f, rowIndex, margin);
+	float totalWidth = colIndex * hexWidth;
+	float totalHeight = halfHexHeight + rowHeight;
+
+	return  (colIndex % 2 == 1) ? FTransform(FVector(totalHeight, totalWidth, 0)) : FTransform(FVector(rowHeight, totalWidth, 0));
+}
+
+
+float AMyGrid::ComputeCoord(float VtoSqrt, float Index,float margin)
+{
+	return (Scale * 100 + margin) * FMath::Sqrt(VtoSqrt) * Index;
+}
+
